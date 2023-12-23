@@ -1,0 +1,11 @@
+{
+  "name": "simpleserver",
+  "version": "1.0.0",
+  "description": "Simple Server for temporary npxl32's website",
+  "main": "simpleserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "npxl32",
+  "license": "ISC"
+}

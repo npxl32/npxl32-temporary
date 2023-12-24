@@ -1,6 +1,6 @@
 {
   "name": "simpleserver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple Server for temporary npxl32's website",
   "main": "simpleserver.js",
   "scripts": {

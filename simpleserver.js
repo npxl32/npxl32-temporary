@@ -3,7 +3,7 @@ const url = require("url");
 // i have the free will to program in other langauges even if I say im a dotnet dev
 // also i have the free will to write terrible code :)
 const app = http.createServer((req, res) => {
-    var boilerplate_begin = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\" /><style>html {height: auto; overflow-x: hidden;} body {background-color: black; color: white; height: 100%;} footer {width: 100%; bottom: 0px; position: absolute;}</style></head><body>";
+    var boilerplate_begin = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\" /><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /><style>html {height: auto; overflow-x: hidden;} body {background-color: black; color: white; height: 100%;} footer {width: 100%; bottom: 0px; position: absolute;}</style></head><body>";
     if(url.parse(req.url).pathname == "/npxl32") {
         res.write(boilerplate_begin);
         res.write("<h1>Secret Page</h1>");

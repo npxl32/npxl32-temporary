@@ -33,6 +33,7 @@ const app = http.createServer((req, res) => {
         res.write("<p>Website out now!</p>");
         res.write("<a href=\"https://www.npxl32.com/\">www.npxl32.com</a>");
         res.write("<p>Make sure the www is there.");
+        res.write("<p>Fun fact: there is a hidden web page. There has always been one. Can you find it?</p>");
         res.write("<footer>");
         res.write("<hr />");
         res.write("<a href=\"privacy\">Privacy</a>");

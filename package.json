@@ -1,11 +1,28 @@
 {
-  "name": "simpleserver",
-  "version": "1.0.1",
+  "name": "npxl32-temporary",
+  "version": "1.1.0",
   "description": "Simple Server for temporary npxl32's website",
   "main": "simpleserver.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "author": "npxl32",
-  "license": "ISC"
+  "license": "MIT",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npxl32/npxl32-temporary.git"
+  },
+  "keywords": [
+    "npxl32",
+    "npxl32-temporary",
+    "node",
+    "http",
+    "image",
+    "low-level"
+  ],
+  "bugs": {
+    "url": "https://github.com/npxl32/npxl32-temporary/issues"
+  },
+  "homepage": "https://github.com/npxl32/npxl32-temporary#readme"
 }

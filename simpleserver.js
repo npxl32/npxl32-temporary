@@ -30,8 +30,9 @@ const app = http.createServer((req, res) => {
     } else {
         res.write(boilerplate_begin);
         res.write("<h1>npxl32</h1>");
-        res.write("<p>Work in progress!</p>");
-        res.write("<small>And yes, the domain won't look like this.</small>");
+        res.write("<p>Website out now!</p>");
+        res.write("<a href=\"https://www.npxl32.com/\">www.npxl32.com</a>");
+        res.write("<p>Make sure the www is there.");
         res.write("<footer>");
         res.write("<hr />");
         res.write("<a href=\"privacy\">Privacy</a>");

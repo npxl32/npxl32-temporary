@@ -4,7 +4,8 @@
   "description": "Simple Server for temporary npxl32's website",
   "main": "simpleserver.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "node simpleserver.js"
   },
   "author": "npxl32",
   "license": "MIT",

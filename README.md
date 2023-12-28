@@ -9,6 +9,8 @@ CD npxl32-temporary
 npm install
 npm start
 ```
+Then it should be live at http://localhost:8080/
+
 No dependencies, just native node.js modules
 
 Live:

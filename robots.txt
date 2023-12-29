@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /shrines
+Allow: /privacy
+Allow: /pandgum
+Allow: /npxl32
+Disallow: /pandagun_img
+
+Sitemap: https://npxl32-temporary.azurewebsites.net/sitemap.xml

@@ -59,8 +59,8 @@ function boilerplate_end(res) {
     res.write("</html>\n");
 }
 const app = http.createServer((req, res) => {
-    var exclusions = ["Pandgum Messed Up"];
-    var pgnames = {"/npxl32":"Secret Page", "/privacy":"Privacy Policy", "/pandgum":"Pandgum Shrine", "/pandagun_img":"Pandgum Messed Up", "/shrines":"The Shrines"};
+    var exclusions = ["Pandgum Messed Up", "Robots", "Sitemap"];
+    var pgnames = {"/npxl32":"Secret Page", "/privacy":"Privacy Policy", "/pandgum":"Pandgum Shrine", "/pandagun_img":"Pandgum Messed Up", "/shrines":"The Shrines", "/robots.txt":"Robots", "/sitemap.xml":"Sitemap"};
     var pgname_default = "Home";
     var pgname = pgnames[url.parse(req.url).pathname] || pgname_default;
     if (!exclusions.includes(pgname)) {
@@ -93,7 +93,15 @@ const app = http.createServer((req, res) => {
       //res.write(fs.readFileSync("pandagun.jpg"));
       fs.createReadStream("pandagun.jpg")
         .pipe(res);
-    } else if (pgname == "The Shrines") {
+    } else if (pgname == "Robots") {
+      res.writeHead(200, {"content-type":"text/plain; charset=utf8", "cache-control":"no-cache"});
+      fs.createReadStream("robots.txt")
+        .pipe(res);
+    } else if (pgname == "Sitemap") {
+      res.writeHead(200, {"content-type":"application/xml; charset=utf8", "cache-control":"no-cache"});
+      fs.createReadStream("sitemap.xml")
+        .pipe(res);
+    }else if (pgname == "The Shrines") {
         res.write("    <a href=\"/\">Home</a>");
         res.write("    <hr />");
         res.write("    <h1>The shrines</h1>");

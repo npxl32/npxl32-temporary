@@ -32,6 +32,9 @@ function boilerplate_begin(res, pgname) {
     res.write("      a {\n");
     res.write("        color: #0000ff;\n");
     res.write("      }\n");
+    res.write("      a:active {\n");
+    res.write("        color: #0000bd;\n");
+    res.write("      }\n");
     res.write("      button {\n");
     res.write("        background-color: green;\n");
     res.write("        color: white;\n");
@@ -64,15 +67,21 @@ const app = http.createServer((req, res) => {
             boilerplate_begin(res, pgname);
     }
     if(pgname == "Secret Page") {
+        res.write("    <a href=\"/\">Home</a>");
+        res.write("    <hr />");
         res.write("    <h1>Secret Page</h1>\n");
         res.write("    <p>This page exists!</p>\n");
     } else if(pgname == "Privacy Policy") {
+        res.write("    <a href=\"/\">Home</a>");
+        res.write("    <hr />");
         res.write("    <h1>Privacy Policy</h1>\n");
         res.write("    <h3>Do you collect any info?</h2>\n");
         res.write("    <p>No.</p>\n");
         res.write("    <h3>Do you use cookies?</h2>\n");
         res.write("    <p>No.</p>\n");
     } else if (pgname == "Pandgum Shrine") {
+        res.write("    <a href=\"/\">Home</a>");
+        res.write("    <hr />");
         res.write("    <h1>Pandgum shrine</h1>\n");
         res.write("    <p>This idiot</p>\n");
         res.write("    <img src=\"/pandagun_img\" />\n");
@@ -85,6 +94,8 @@ const app = http.createServer((req, res) => {
       fs.createReadStream("pandagun.jpg")
         .pipe(res);
     } else if (pgname == "The Shrines") {
+        res.write("    <a href=\"/\">Home</a>");
+        res.write("    <hr />");
         res.write("    <h1>The shrines</h1>");
         res.write("    <p>A list of all the shrines.</p>");
         res.write("    <ul>")
@@ -96,7 +107,7 @@ const app = http.createServer((req, res) => {
         res.write("    <a href=\"https://www.npxl32.com/\">www.npxl32.com</a>\n");
         res.write("    <p>Make sure the www is there.</p>\n");
         res.write("    <p>Fun fact: there is a hidden web page. There has always been one. Can you find it?</p>\n");
-        res.write("    <a href=\"/shrines\">The Shrines</a>");
+        res.write("    <a href=\"/shrines\">The Shrines</a>\n");
     }
     if (!exclusions.includes(pgname)) {
             boilerplate_end(res);

@@ -60,7 +60,7 @@ function boilerplate_end(res) {
 }
 const app = http.createServer((req, res) => {
     var exclusions = ["Pandgum Messed Up", "Robots", "Sitemap", "TRE image"];
-    var pgnames = {"/npxl32":"Secret Page", "/privacy":"Privacy Policy", "/pandgum":"Pandgum Shrine", "/pandagun_img":"Pandgum Messed Up", "/shrines":"The Shrines", "/robots.txt":"Robots", "/sitemap.xml":"Sitemap", "/theredterrarian":"TRE Shrine", "/tre_img":"TRE image"};
+    var pgnames = {"/npxl32":"Secret Page", "/privacy":"Privacy Policy", "/pandgum":"Pandgum Shrine", "/pandagun_img":"Pandgum Messed Up", "/shrines":"The Shrines", "/robots.txt":"Robots", "/sitemap.xml":"Sitemap", "/theredterrarian":"TRE Shrine", "/tre_img":"The Red Terrarian image"};
     var pgname_default = "Home";
     var pgname = pgnames[url.parse(req.url).pathname] || pgname_default;
     if (!exclusions.includes(pgname)) {
@@ -112,7 +112,7 @@ const app = http.createServer((req, res) => {
         res.write("    <ul>");
         res.write("        <li><a href=\"/theredterrarian\">The Red Terrarian</a></li>");
         res.write("     </ul>");
-    } else if (pgname == "TRE Shrine") {
+    } else if (pgname == "The Red Terrarian Shrine") {
         res.write("    <a href=\"/\">Home</a>");
         res.write("    <hr />");
         res.write("    <h1>The Red Terrarian Shrine</h1>");

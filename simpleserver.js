@@ -59,8 +59,8 @@ function boilerplate_end(res) {
     res.write("</html>\n");
 }
 const app = http.createServer((req, res) => {
-    var exclusions = ["Pandgum Messed Up", "Robots", "Sitemap"];
-    var pgnames = {"/npxl32":"Secret Page", "/privacy":"Privacy Policy", "/pandgum":"Pandgum Shrine", "/pandagun_img":"Pandgum Messed Up", "/shrines":"The Shrines", "/robots.txt":"Robots", "/sitemap.xml":"Sitemap"};
+    var exclusions = ["Pandgum Messed Up", "Robots", "Sitemap", "TRE image"];
+    var pgnames = {"/npxl32":"Secret Page", "/privacy":"Privacy Policy", "/pandgum":"Pandgum Shrine", "/pandagun_img":"Pandgum Messed Up", "/shrines":"The Shrines", "/robots.txt":"Robots", "/sitemap.xml":"Sitemap", "/theredterrarian":"TRE Shrine", "/tre_img":"TRE image"};
     var pgname_default = "Home";
     var pgname = pgnames[url.parse(req.url).pathname] || pgname_default;
     if (!exclusions.includes(pgname)) {
@@ -87,7 +87,7 @@ const app = http.createServer((req, res) => {
         res.write("    <img src=\"/pandagun_img\" />\n");
         res.write("    <p><a href=\"https://www.pandgum.xyz\" />www.pandgum.xyz</a> (it even has the same www. problem)</p>\n")
         res.write("    <p>ALL MY FELLAS</p>\n");
-        res.write("    <p>Message from Pandgum himself: HI WORLD! Im on the npxl32 website (editor note: youre on the temporary website lmfao) im famous slayyy. I hope my shrine looks beautiful and yeah. Subscribe and buy my merch please. http://www.pandgum.xyz (the www. needs to be there)        </p>\n");
+        res.write("    <p>Message from Pandgum himself: <i>HI WORLD! Im on the npxl32 website (editor note: youre on the temporary website lmfao) im famous slayyy. I hope my shrine looks beautiful and yeah. Subscribe and buy my merch please. http://www.pandgum.xyz (the www. needs to be there)</i>        </p>\n");
     } else if (pgname == "Pandgum Messed Up") {
       res.writeHead(200, {"content-type":"image/jpg; charset=utf8", "cache-control":"no-cache"});
       //res.write(fs.readFileSync("pandagun.jpg"));
@@ -109,7 +109,21 @@ const app = http.createServer((req, res) => {
         res.write("    <ul>")
         res.write("      <li><a href=\"/pandgum\">Pandgum</a></li>");
         res.write("    </ul>");
-    }else {
+        res.write("    <ul>");
+        res.write("        <li><a href=\"/theredterrarian\">The Red Terrarian</a></li>");
+        res.write("     </ul>");
+    } else if (pgname == "TRE Shrine") {
+        res.write("    <a href=\"/\">Home</a>");
+        res.write("    <hr />");
+        res.write("    <h1>The Red Terrarian Shrine</h1>");
+        res.write("    <p>idiot:</p>");
+        res.write("    <img src=\"/tre_img\" />");
+        res.write("    <p>Message from The Red Terrarian himself:<i><br />im going to stab you<br />alas</p></i>");
+        res.write("    <a href=\"https://theredterrarian.github.io/\">theredterrarian.github.io</a>");
+    } else if (pgname == "TRE image") {
+        fs.createReadStream("tre.jpg")
+            .pipe(res);
+    } else {
         res.write("    <h1>npxl32</h1>\n");
         res.write("    <p>Website out now!</p>\n");
         res.write("    <a href=\"https://www.npxl32.com/\">www.npxl32.com</a>\n");

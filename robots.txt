@@ -5,5 +5,6 @@ Allow: /privacy
 Allow: /pandgum
 Allow: /npxl32
 Disallow: /pandagun_img
+Disallow: /tre_img
 
 Sitemap: https://npxl32-temporary.azurewebsites.net/sitemap.xml

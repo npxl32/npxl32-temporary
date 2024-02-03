@@ -60,7 +60,7 @@ function boilerplate_end(res) {
 }
 const app = http.createServer((req, res) => {
     var exclusions = ["Pandgum Messed Up", "Robots", "Sitemap", "TRE image"];
-    var pgnames = {"/npxl32":"Secret Page", "/privacy":"Privacy Policy", "/pandgum":"Pandgum Shrine", "/pandagun_img":"Pandgum Messed Up", "/shrines":"The Shrines", "/robots.txt":"Robots", "/sitemap.xml":"Sitemap", "/theredterrarian":"TRE Shrine", "/tre_img":"The Red Terrarian image"};
+    var pgnames = {"/npxl32":"Secret Page", "/privacy":"Privacy Policy", "/pandgum":"Pandgum Shrine", "/pandagun_img":"Pandgum Messed Up", "/shrines":"The Shrines", "/robots.txt":"Robots", "/sitemap.xml":"Sitemap", "/theredterrarian":"The Red Terrarian Shrine", "/tre_img":"TRE image"};
     var pgname_default = "Home";
     var pgname = pgnames[url.parse(req.url).pathname] || pgname_default;
     if (!exclusions.includes(pgname)) {

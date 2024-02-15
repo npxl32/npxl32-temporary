@@ -1,5 +1,5 @@
 # npxl32-temporary
-This was the placeholder for the [npxl32 website](https://www.npxl32.com/), but now it's just open source cuz why not.
+This was the placeholder for the [npxl32 website](https://www.npxl32.com/), but now it's just open source because it is extremely humorous (after all, the entire point of this website!)
 
 You will need node.js LTS 20 to run this.
 How to run:
@@ -15,4 +15,4 @@ No other dependencies, just native node.js modules
 
 Live:
 [https://npxl32-temporary.azurewebsites.net/](https://npxl32-temporary.azurewebsites.net/)
-(the temporary website uses azure free hosting tier while the real npxl32 website uses basic tier, so it could possibly be slow)
+(the live example uses free hosting tier so it could possibly be slow)

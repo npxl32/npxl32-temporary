@@ -59,8 +59,8 @@ function boilerplate_end(res) {
     res.write("</html>\n");
 }
 const app = http.createServer((req, res) => {
-    var exclusions = ["Pandgum Messed Up", "Robots", "Sitemap", "TRE image"];
-    var pgnames = {"/npxl32":"Secret Page", "/privacy":"Privacy Policy", "/pandgum":"Pandgum Shrine", "/pandagun_img":"Pandgum Messed Up", "/shrines":"The Shrines", "/robots.txt":"Robots", "/sitemap.xml":"Sitemap", "/theredterrarian":"The Red Terrarian Shrine", "/tre_img":"TRE image"};
+    var exclusions = ["Pandgum Messed Up", "Robots", "Sitemap", "TRT image"];
+    var pgnames = {"/npxl32":"Secret Page", "/privacy":"Privacy Policy", "/pandgum":"Pandgum Shrine", "/pandagun_img":"Pandgum Messed Up", "/shrines":"The Shrines", "/robots.txt":"Robots", "/sitemap.xml":"Sitemap", "/theredterrarian":"The Red Terrarian Shrine", "/trt_img":"TRT image", "/seo":"Search Engine Optimized"};
     var pgname_default = "Home";
     var pgname = pgnames[url.parse(req.url).pathname] || pgname_default;
     if (!exclusions.includes(pgname)) {
@@ -106,6 +106,7 @@ const app = http.createServer((req, res) => {
         res.write("    <hr />");
         res.write("    <h1>The shrines</h1>");
         res.write("    <p>A list of all the shrines.</p>");
+	res.write("    <p>The shrines were made for my friends and their entire text content was written by them.</p>");
         res.write("    <ul>")
         res.write("      <li><a href=\"/pandgum\">Pandgum</a></li>");
         res.write("    </ul>");
@@ -117,12 +118,17 @@ const app = http.createServer((req, res) => {
         res.write("    <hr />");
         res.write("    <h1>The Red Terrarian Shrine</h1>");
         res.write("    <p>idiot:</p>");
-        res.write("    <img src=\"/tre_img\" />");
+        res.write("    <img src=\"/trt_img\" />");
         res.write("    <p>Message from The Red Terrarian himself:<i><br />im going to stab you<br />alas</p></i>");
         res.write("    <a href=\"https://theredterrarian.github.io/\">theredterrarian.github.io</a>");
-    } else if (pgname == "TRE image") {
-        fs.createReadStream("tre.jpg")
+    } else if (pgname == "TRT image") {
+        fs.createReadStream("trt.jpg")
             .pipe(res);
+    } else if (pgname == "Search Engine Optimized") {
+        res.write("    <a href=\"/\">Home</a>");
+        res.write("    <hr />");
+	res.write("    <h1>Search Engine Optimized</h1>");
+        res.write("    <p>guys its a parked domain i swear</p>");
     } else {
         res.write("    <h1>npxl32</h1>\n");
         res.write("    <p>Website out now!</p>\n");
